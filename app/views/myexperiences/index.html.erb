@@ -1,0 +1,18 @@
+<body id="index-body">
+
+<div id="view-title"><h1> POSTS </h1></div>
+
+<div id="list-of-posts">
+<% @myexperiences.each do |l| %>
+    <h1><%= l.title%> </h1> 
+    <button class="buttons"><%= link_to 'view' , show_path(l)%></button>
+   
+<%end%></div>
+<div style="display:flex;justify-content:center;margin-top:20px">
+<button class="buttons"><%= link_to 'New Blog', get_form_path %></button>
+</div>
+
+
+
+</body>
+
