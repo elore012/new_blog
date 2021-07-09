@@ -9,5 +9,5 @@ root to: 'experiences#index'
    get '/myexperiences/:id/edit' => 'myexperiences#edit', as:'edit'
  delete '/myexperiences/:id' => 'myexperiences#destroy', as: 'destroy'
   post '/myexperiences/:id/edit' => 'myexperiences#update', as:'update'
-  
+   
 end
