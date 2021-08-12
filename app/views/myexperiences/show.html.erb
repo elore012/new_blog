@@ -1,23 +1,25 @@
-<body id="show-html" style="background-color:white;">
+<body style="background-color: white">
+
 <div id="show-template">
-<div>
-<h1> WELCOME TO MY POST </h1>
-</div>
+        <div>
+        <h1> WELCOME TO MY POST </h1>
+        </div>
 
-<div class="show-elements">
-Hi my name is <%=@myexperiences.name%>
-</div>
-<div class="show-elements">
-TITLE : <%= @myexperiences.title%>
-</div>
-<div class="show-elements">
-<%= @myexperiences.body%>
-</div>
-<div>
-<button class="buttons"><%= link_to 'Delete', destroy_path(@myexperiences),method: :delete,data: {confirm: "are you sure?"} %></button>
-<button class="buttons"><%= link_to 'Edit', edit_path(@myexperiences) %></button>
-<button class="buttons"><%= link_to 'Homepage', view_path%></button>
+        <div class="show-elements">
+        Hi my name is <%=@myexperiences.name%>
+        </div>
 
-</div>
+      
+
+        <div class="show-elements">
+        <%= @myexperiences.body%>
+        </div>
+
+        <div>
+            <button class="buttons"><%= link_to 'Delete', destroy_path(@myexperiences),method: :delete,data: {confirm: "are you sure?"} %></button>
+            <button class="buttons"><%= link_to 'Edit', edit_path(@myexperiences) %></button>
+            <button class="buttons"><%= link_to 'Homepage', view_path%></button>
+        </div>
+
 </div>
 </body

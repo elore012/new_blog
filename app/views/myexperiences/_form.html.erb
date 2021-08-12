@@ -2,39 +2,46 @@
 <%= form_with scope: :myexperience,url: update_path ,local: true do |f| %>
 
 <div id="newhtml">
-<% @myexperience.errors.full_messages_for(:name).each do |t| %>
-    <div><%= t%></div>
-    <%end%>
-    <% @myexperience.errors.full_messages_for(:title).each do |t| %>
-        <div><%= t%></div>
-        <%end%>
-        <% @myexperience.errors.full_messages_for(:body).each do |t| %>
-            <div><%= t%></div>
-            <%end%>
 
-    <div class="div-of-newhtml">
-    
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    </div>
-    <div class ="div-of-newhtml">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
- 
-    </div>
-    <div id="textarea">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-   
-    </div>
-    <p>
-    <%= f.submit "Submit" %>
-    <button class="buttons"><%= link_to 'New Blog', get_form_path %></button>
-    <button class="buttons"><%= link_to 'Back ' , view_path %></button>
-    </p>
+    <% @myexperience.errors.full_messages_for(:name).each do |t| %>
+    <div class="errors"><%= t%></div>
+    <%end%>
+
+    <% @myexperience.errors.full_messages_for(:title).each do |t| %>
+    <div class="errors"><%= t%></div>
+    <%end%>
+
+    <% @myexperience.errors.full_messages_for(:body).each do |t| %>
+    <div class="errors"><%= t%></div>
     <%end%>
 </div>
 
+<div id="edit">
+        <div id="editform">
+            <div class="div-of-newhtml">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            </div>
+
+            <div class ="div-of-newhtml">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+            </div>
+
+            <div id="div-of-newhtml">
+            <%= f.label :body %>
+            <%= f.text_area :body %>
+            </div>
+
+            <p>
+            <%= f.submit "Submit" %>
+            <button class="buttons"><%= link_to 'New Blog', get_form_path %></button>
+            <button class="buttons"><%= link_to 'Back ' , view_path %></button>
+            </p>
+            <%end%>
+            </div>
+</div>
+</div>
 
   
    
