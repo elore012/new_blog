@@ -1,16 +1,19 @@
-<body id="index-body">
+<div id="index-body">
 
-<div id="view-title"><h1> POSTS </h1></div>
+<div id="view-title" class="title"><h1> POSTS </h1></div>
+<div id="newblog-button" class="title"><button class="buttons" ><%= link_to 'New Blog', get_form_path %></button></div>
+
+</div>
 
 <div id="list-of-posts">
-<% @myexperiences.each do |l| %>
-    <h1><%= l.title%> </h1> 
-    <button class="buttons"><%= link_to 'view' , show_path(l)%></button>
-   
+
+<% @myexperiences.each do |l| %> 
+    <div id="listbox">
+   <div class="postslist"> <h2><%= l.title%> </h2></div>
+   <div class="postslist"> <button class="buttons"><%= link_to 'View Post' , show_path(l)%></button></div>
+   </div>
 <%end%></div>
-<div style="display:flex;justify-content:center;margin-top:20px">
-<button class="buttons"><%= link_to 'New Blog', get_form_path %></button>
-</div>
+
 
 
 

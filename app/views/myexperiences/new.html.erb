@@ -2,15 +2,21 @@
 <%= form_with scope: :myexperience,url: create_path ,local: true do |f| %>
 
 <div id="newhtml">
-<% @myexperiences.errors.full_messages_for(:name).each do |t| %>
-    <div><%= t%></div>
+
+    <% @myexperiences.errors.full_messages_for(:name).each do |t| %>
+    <div class="errors"><%= t%></div>
     <%end%>
+
     <% @myexperiences.errors.full_messages_for(:title).each do |t| %>
-        <div><%= t%></div>
-        <%end%>
-        <% @myexperiences.errors.full_messages_for(:body).each do |t| %>
-            <div><%= t%></div>
-            <%end%>
+    <div class= "errors"><%= t%></div>
+    <%end%>
+
+    <% @myexperiences.errors.full_messages_for(:body).each do |t| %>
+    <div class="errors"><%= t%></div>
+     <%end%>
+    
+
+     <div id="new-form">
     <div class="div-of-newhtml">
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -23,11 +29,10 @@
     <div id="textarea">
     <%= f.label :body %>
     <%= f.text_area :body %>
-   
+    </div>
     </div>
     <p>
     <%= f.submit "Save" %>
-    <button class="buttons"><%= link_to 'New Blog', get_form_path %></button>
     <button class="buttons"><%= link_to 'Homepage', view_path %></button>
     </p>
     <%end%>
